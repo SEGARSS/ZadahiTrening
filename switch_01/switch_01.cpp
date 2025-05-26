@@ -5,7 +5,7 @@
 
 
 #include <iostream>
-#include <cctype> // дл€ функции toupper
+#include <cctype> // дл€ функции toupper/
 using namespace std;
 
 int main()
@@ -13,13 +13,13 @@ int main()
    setlocale(LC_ALL, "rus");
 
    char a; // будет хранить выбор пользовател€
-   bool var = true; // управл€юща€ переменна€ цикла do while
+   bool var = true; // управл€юща€ переменна€ цикла do while.
 
    cout << "¬ведите букву из перечн€, дл€ расчета времени в пути (A,B,C,D,E): ";
 
 
    do {
-      var = false; // дл€ выхода из цикла, если не сработает default 
+      var = false; // дл€ выхода из цикла, если не сработает default .
       // т.е. если найдетс€ подход€щий case
       cin >> a; // ввод значени€
       a = toupper(a);
