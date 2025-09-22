@@ -11,7 +11,7 @@ int main()
 	std::cin >> n; //Указываем количество элементов векторе.
 	std::vector<int> alem(n);
 	
-	int min = 1;
+	int min = 999;
 	int max = 0;
 
 	for (int i = 0; i < alem.size(); i++)
