@@ -97,11 +97,11 @@ int main()
 & - применяем если нет временного объяекта (временной переменной). 
 Как в примере - 
 Point operator- (const Point& p)//Оператор вычетания
-    {
-        Point tmp;
-        tmp.x = x - p.x;
-        tmp.y = y - p.y;
-        return tmp;
-    }
+{
+    Point tmp;
+    tmp.x = x - p.x;
+    tmp.y = y - p.y;
+    return tmp;
+}
 Где временная переменная это - tmp.
 */
