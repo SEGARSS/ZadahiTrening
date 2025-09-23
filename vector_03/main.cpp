@@ -1,4 +1,4 @@
-
+п»ї
 #include <iostream>
 #include <vector>
 #include <string>
@@ -32,7 +32,7 @@ public:
 
     void voice() override
     {
-        std::cout << "мяу" << std::endl;
+        std::cout << "РјСЏСѓ" << std::endl;
     }
 
 };
@@ -47,7 +47,7 @@ public:
 
     void voice() override
     {
-        std::cout << "гав" << std::endl;
+        std::cout << "РіР°РІ" << std::endl;
     }
 
 };
@@ -62,7 +62,7 @@ public:
 
     void voice() override
     {
-        std::cout << "чирик-чирик" << std::endl;
+        std::cout << "С‡РёСЂРёРє-С‡РёСЂРёРє" << std::endl;
     }
 
 };
@@ -70,9 +70,9 @@ public:
 std::vector<Animal*> createVector()
 {
     std::vector<Animal*> v;
-    v.push_back(new Cat("Рыся", 5));
-    v.push_back(new Dog("Хас", 4));
-    v.push_back(new Parrot("Кеша", 7));
+    v.push_back(new Cat("Р С‹СЃСЏ", 5));
+    v.push_back(new Dog("РҐР°СЃ", 4));
+    v.push_back(new Parrot("РљРµС€Р°", 7));
 
     return v;
 }
@@ -94,12 +94,12 @@ bool findNameInVector(std::vector<Animal*> v, std::string name)
         if (v[i]->name == name)
         {
             //poisk = true;
-            std::cout << "Такое животное есть." << std::endl;
+            std::cout << "РўР°РєРѕРµ Р¶РёРІРѕС‚РЅРѕРµ РµСЃС‚СЊ." << std::endl;
         }
         else
         {
             //poisk = false;
-            std::cout << "Такова животного нет." << std::endl;
+            std::cout << "РўР°РєРѕРІР° Р¶РёРІРѕС‚РЅРѕРіРѕ РЅРµС‚." << std::endl;
         }
     }
 
@@ -109,13 +109,13 @@ bool findNameInVector(std::vector<Animal*> v, std::string name)
 int main()
 {
     std::setlocale(LC_ALL, "ru");
-    //findNameInVector - ищет в векторе животное по кличке - возвращает - true есть, false - нет
+    //findNameInVector - РёС‰РµС‚ РІ РІРµРєС‚РѕСЂРµ Р¶РёРІРѕС‚РЅРѕРµ РїРѕ РєР»РёС‡РєРµ - РІРѕР·РІСЂР°С‰Р°РµС‚ - true РµСЃС‚СЊ, false - РЅРµС‚
 
     std::vector<Animal*> v = createVector();
 
     callAnimalsVoice(v);
 
-    bool isVectorIncludeName = findNameInVector(v, "Хас");
+    bool isVectorIncludeName = findNameInVector(v, "РҐР°СЃ");
 
     return 0;
 }
