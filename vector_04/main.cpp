@@ -48,7 +48,7 @@ int main()
         std::cout << "нашли " << std::endl;
     }
 
-    printKolichestvoChelovek(v); /// 4 humans
+    printKolichestvoChelovek(v); /// 4 humans/
 
 
     return 0;
