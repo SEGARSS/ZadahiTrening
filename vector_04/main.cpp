@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <vector>
 #include <string>
 
@@ -28,24 +28,24 @@ int main()
     //   Student
 
 
-    // name (имя) , age (возраст)
-    // student - course (курс 1 - 4)
-    // professor - predmet (математика, химия, история)
+    // name (РёРјСЏ) , age (РІРѕР·СЂР°СЃС‚)
+    // student - course (РєСѓСЂСЃ 1 - 4)
+    // professor - predmet (РјР°С‚РµРјР°С‚РёРєР°, С…РёРјРёСЏ, РёСЃС‚РѕСЂРёСЏ)
 
-    // greating(приветствие)
-    // student - Я "имя", мне %%% лет, я на %%% курсе
-    // professor - Я профессор "имя", мне %%% лет, я преподаю %%%%%
+    // greating(РїСЂРёРІРµС‚СЃС‚РІРёРµ)
+    // student - РЇ "РёРјСЏ", РјРЅРµ %%% Р»РµС‚, СЏ РЅР° %%% РєСѓСЂСЃРµ
+    // professor - РЇ РїСЂРѕС„РµСЃСЃРѕСЂ "РёРјСЏ", РјРЅРµ %%% Р»РµС‚, СЏ РїСЂРµРїРѕРґР°СЋ %%%%%
 
 
 
     std::vector<Human*> v = createHumans();
 
-    printHumansGreating(v); // выводит приветствия всех кто у меня в векторе
+    printHumansGreating(v); // РІС‹РІРѕРґРёС‚ РїСЂРёРІРµС‚СЃС‚РІРёСЏ РІСЃРµС… РєС‚Рѕ Сѓ РјРµРЅСЏ РІ РІРµРєС‚РѕСЂРµ
 
     bool find = findHuman(v, "Vasya");
     if (find)
     {
-        std::cout << "нашли " << std::endl;
+        std::cout << "РЅР°С€Р»Рё " << std::endl;
     }
 
     printKolichestvoChelovek(v); /// 4 humans/
