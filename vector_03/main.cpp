@@ -87,23 +87,12 @@ void callAnimalsVoice(std::vector<Animal*> v)
 //-------------------------------------------------------------------------------------------------
 bool findNameInVector(std::vector<Animal*> v, std::string name)
 {
-    //bool poisk = false;
-
     for (int i = 0; i < v.size(); ++i)
     {
-        if (v[i]->name == name)
-        {
-            //poisk = true;
-            std::cout << "Такое животное есть." << std::endl;
-        }
-        else
-        {
-            //poisk = false;
-            std::cout << "Такова животного нет." << std::endl;
-        }
+        v[i]->name;
     }
 
-    return 0;
+    return v.size();
 }
 //-------------------------------------------------------------------------------------------------
 int main()
@@ -116,6 +105,15 @@ int main()
     callAnimalsVoice(v);
 
     bool isVectorIncludeName = findNameInVector(v, "Хас");
+
+    if (isVectorIncludeName == true)
+    {
+        std::cout << "Такое животное есть." << std::endl;
+    }
+    else
+    {
+        std::cout << "Такова животного нет." << std::endl;
+    }
 
     return 0;
 }
