@@ -70,9 +70,9 @@ public:
 std::vector<Animal*> createVector()
 {
     std::vector<Animal*> v;
-    v.push_back(new Cat("Рыся", 5));
-    v.push_back(new Dog("Хас", 4));
-    v.push_back(new Parrot("Кеша", 7));
+    v.push_back(new Cat("Ras", 5));
+    v.push_back(new Dog("Has", 4));
+    v.push_back(new Parrot("Keha", 7));
 
     return v;
 }
@@ -87,12 +87,39 @@ void callAnimalsVoice(std::vector<Animal*> v)
 //-------------------------------------------------------------------------------------------------
 bool findNameInVector(std::vector<Animal*> v, std::string name)
 {
+    /*bool poisk = false;
+
     for (int i = 0; i < v.size(); ++i)
     {
-        v[i]->name;
+        if (name == v[i]->name)
+        {
+            poisk = true;
+        }
+        if(v[i]->name != name)
+        {
+            poisk = false;
+        }
     }
 
-    return v.size();
+    return poisk;*/
+
+    bool poisk = false;
+
+    for (int i = 0; i < v.size(); ++i)
+    {
+        if (v[i]->name == name)
+        {
+            poisk = true;
+            std::cout << "Такое животное есть." << std::endl;
+        }
+        else
+        {
+            poisk = false;
+            std::cout << "Такова животного нет." << std::endl;
+        }
+    }
+
+    return poisk;
 }
 //-------------------------------------------------------------------------------------------------
 int main()
@@ -104,16 +131,16 @@ int main()
 
     callAnimalsVoice(v);
 
-    bool isVectorIncludeName = findNameInVector(v, "Хас");
+    bool isVectorIncludeName = findNameInVector(v, "pafw");
 
-    if (isVectorIncludeName == true)
-    {
-        std::cout << "Такое животное есть." << std::endl;
-    }
-    else
-    {
-        std::cout << "Такова животного нет." << std::endl;
-    }
+    //if (isVectorIncludeName == true)
+    //{
+    //    std::cout << "Такое животное есть." << std::endl;
+    //}
+    //if (isVectorIncludeName == false)
+    //{
+    //    std::cout << "Такова животного нет." << std::endl;
+    //}
 
     return 0;
 }
