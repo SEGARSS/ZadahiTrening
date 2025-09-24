@@ -105,11 +105,10 @@ bool findNameInVector(std::vector<Animal*> v_, std::string name_)
 
     std::vector<Animal*> v;
 
-    
+    bool poisk = true;
 
     for (int i = 0; i < v.size(); ++i)
     {
-        bool poisk = true;
         if (v[i]->name == name_)
         {
             return true;
@@ -120,10 +119,9 @@ bool findNameInVector(std::vector<Animal*> v_, std::string name_)
             return false;
             //std::cout << "Такова животного нет." << std::endl;
         }
-        return poisk;
     }
 
-    
+    return poisk;
 }
 //-------------------------------------------------------------------------------------------------
 int main()
