@@ -69,7 +69,7 @@ int main()
 {
     setlocale(LC_ALL, "ru");
 
-    std::map<std::string /*Номер книги*/, std::vector<Book> /*Данные об книжке*/> bibl = createMap();    
+    std::map<std::string /*Номер книги.*/, std::vector<Book> /*Данные об книжке*/> bibl = createMap();    
 
     printAutorBooks(bibl);
 
