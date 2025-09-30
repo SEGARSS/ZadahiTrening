@@ -29,37 +29,47 @@ struct Book
 std::map<std::string, std::vector<Book>> createMap()
 {
     std::map<std::string, std::vector<Book>> bibl;
-    bibl["Книга_20"].push_back(Book({ "Писака", "История, ", 100 }));
-    bibl["Книга_10"].push_back(Book({ "Гуляка", "Поход, ", 200 }));
-    bibl["Книга_01"].push_back(Book({ "Леняка", "Лежакот, ", 300 }));
-    bibl["Книга_09"].push_back(Book({ "Пройдоха", "Пофигад, ", 400 }));
+    bibl["Писака"].push_back(Book({ "Книга_20", "История", 100 }));
+    bibl["Гуляка"].push_back(Book({ "Книга_10", "Поход", 200 }));
+    bibl["Леняка"].push_back(Book({ "Книга_01", "Лежакот", 300 }));
+    bibl["Пройдоха"].push_back(Book({ "Книга_09", "Пофигад", 400 }));
 
     return bibl;
 }
 //---------------------------------------------------------------------------------------------------
-void printAutorBooks(std::map<std::string, std::vector<Book>> info)
+void printAutorBooks(std::map<std::string, std::vector<Book>> &info)
 {
     for (auto& item : info)
     {
         std::cout << item.first << std::endl;
         for (const Book& buks : item.second)
         {
-            std::cout << "   - " << buks.autor << " " << buks.name << " Количество странниц: - " << buks.str << std::endl;
+            std::cout << "   - " << buks.autor << " " << buks.name << ", " << " Количество странниц: - " << buks.str << std::endl;
         }
     }
 }
 //---------------------------------------------------------------------------------------------------
-bool findAutor(std::map<std::string, std::vector<Book>> info_, std::string autor)
+//bool findAutor(std::map<std::string, std::vector<Book>> info_, std::string autor)
+//{
+//    for (auto& item : info_)
+//    {
+//        for (const Book& buks : item.second)
+//        {
+//            if (buks.autor == autor)
+//            {
+//                return true;
+//            }
+//        }
+//    }
+//
+//    return false;
+//}
+//--------------------------------------------------------------------------------------------------- 
+bool findAutor(std::map<std::string, std::vector<Book>> &info_, std::string autor)
 {
-    for (auto& item : info_)
+    if (info_.contains(autor))
     {
-        for (const Book& buks : item.second)
-        {
-            if (buks.autor == autor)
-            {
-                return true;
-            }
-        }
+        return true;
     }
 
     return false;
