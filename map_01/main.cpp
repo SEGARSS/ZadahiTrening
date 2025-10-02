@@ -41,12 +41,26 @@ void printAutorBooks(std::map<std::string, std::vector<Book>> &info)
 {
     for (auto& item : info)
     {
-        std::cout << item.first << std::endl;
-        for (const Book& buks : item.second)
+        /*Как понять что куда попадает из этого - std::map<std::string, std::vector<Book>> &info*/
+        std::cout << item.first << std::endl; // item.first - попадает - std::string
+        for (const Book& buks : item.second) // item.second - попадает - std::vector<Book>
         {
             std::cout << "   - " << buks.autor << " " << buks.name << ", " << " Количество странниц: - " << buks.str << std::endl;
         }
     }
+
+    //Второй пример реализации записи которая выше.
+    /*    
+    for (auto& item : info)
+    {
+        std::cout << item.first << std::endl;
+        //for (const Book& buks : item.second)
+        for (int i = 0; i < info.size(); ++i)
+        {
+            std::cout << "   - " << item.second[i].autor << " " << item.second[i].name << ", " << " Количество странниц: - " << item.second[i].str << std::endl;
+        }
+    }
+    */
 }
 //---------------------------------------------------------------------------------------------------
 //bool findAutor(std::map<std::string, std::vector<Book>> info_, std::string autor)
@@ -67,7 +81,7 @@ void printAutorBooks(std::map<std::string, std::vector<Book>> &info)
 //--------------------------------------------------------------------------------------------------- 
 bool findAutor(std::map<std::string, std::vector<Book>> &info_, std::string autor)
 {
-    if (info_.contains(autor))
+    if (info_.contains(autor)) // Непосредственно ищем целеноправленный элемент(контейнер)
     {
         return true;
     }
