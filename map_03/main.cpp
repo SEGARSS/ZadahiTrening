@@ -13,13 +13,6 @@ int main()
 	std::map<char /*шифр*/, char /*оригинал*/> deshifr;
 
 	int sdvig = 1;
-
-	std::string vod;
-	std::string msg;
-
-	std::cout << "Ведите слово для зашифровки и расшифровки: - ";
-	std::cin >> vod;
-
 	for (char c = 'a'; c <= 'z'; c++)
 	{
 		char c_2 = c + sdvig;
@@ -27,33 +20,28 @@ int main()
 		deshifr[c_2] = c;
 	}
 
+	std::string vod;
+	std::string msg;
+
+	std::cout << "Ведите слово для зашифровки и расшифровки: - ";
+	std::cin >> vod;
+
 	for (auto z : vod)
 	{
 		if (cezar.contains(z))
-		{
-			//std::cout << cezar[z];
-
-			//			
-			msg += cezar[z];
-			//std::cout << msg;			
+		{	
+			msg += cezar[z];		
 		}
 		else
-		{
-			//std::cout << z;
-
-			//std::string msg;			
+		{		
 			msg += z;
-			//std::cout << msg;
-		}		
+		}
 	}
 
 	std::cout << msg;
 	std::cout << std::endl;
 
-	//std::cout << "Ведите слово для расшифровки: - ";
-	//std::cin >> vod;
-
-	for (auto r : vod)
+	for (auto r : msg)
 	{
 		if (deshifr.contains(r))
 		{
