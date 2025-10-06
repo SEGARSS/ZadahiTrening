@@ -15,11 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="main.idl">
+    <ClCompile Include="main.cpp">
       <Filter>Файлы ресурсов</Filter>
-    </Midl>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    </ClCompile>
   </ItemGroup>
 </Project>
