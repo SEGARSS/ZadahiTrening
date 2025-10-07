@@ -36,6 +36,13 @@ public:
             cezar[c] = c_2;
             deshifr[c_2] = c;
         }
+
+        for (char c = 'A'; c <= 'Z'; c++)
+        {
+            char c_2 = c + sdvig;
+            cezar[c] = c_2;
+            deshifr[c_2] = c;
+        }
     }
 
     void code(std::string &soob)
@@ -70,6 +77,7 @@ public:
 
     std::map<char /*оригинал*/, char /*шифр*/> cezar;
     std::map<char /*шифр*/, char /*оригинал*/> deshifr;
+
 
     std::string cod;
     std::string soob;
