@@ -26,8 +26,6 @@ public:
 
     Cezar()
     {
-        std::map<char /*оригинал*/, char /*шифр*/> cezar;
-        std::map<char /*шифр*/, char /*оригинал*/> deshifr;
     }
 
     void Shifr()
@@ -39,7 +37,8 @@ public:
             deshifr[c_2] = c;
         }
     }
-    void code(std::string soob)
+
+    void code(std::string &soob)
     {
         for (auto z : soob)
         {
@@ -53,7 +52,8 @@ public:
             }
         }
     }
-    void decode(std::string soob)
+
+    void decode(std::string &soob)
     {
         for (auto r : soob)
         {
@@ -70,18 +70,17 @@ public:
 
     std::map<char /*оригинал*/, char /*шифр*/> cezar;
     std::map<char /*шифр*/, char /*оригинал*/> deshifr;
-    int sdvig;
-    
+
+    std::string cod;
+    std::string soob;
+    int sdvig;    
 };
 //----------------------------------------------------------------------------------------
 int main()
 {
     setlocale(LC_ALL, "ru");
 
-    Cezar c;   
-
-    std::string cod; 
-    std::string soob;
+    Cezar c;    
 
     std::cout << "Введите сдвиг: ";
     std::cin >> c.sdvig;
@@ -89,29 +88,28 @@ int main()
     c.Shifr();
 
     while (true)    
-    {
-        
+    {        
         std::cout << "Введите команду: ";
-        std::cin >> cod;
-        std::cin.ignore();
+        std::cin >> c.cod;
+        std::cin.ignore();        
 
-        if (cod == "code")
+        if (c.cod == "code")
         {  
             std::cout << "Введите сообщение: ";
-            std::getline(std::cin, soob);
+            std::getline(std::cin, c.soob);
             std::cout << "Ваше сообщение: ";
-            c.code(soob);
+            c.code(c.soob);
             std::cout << std::endl;
         }
-        else if (cod == "decode")
+        else if (c.cod == "decode")
         {   
             std::cout << "Введите сообщение: ";
-            std::getline(std::cin, soob);
+            std::getline(std::cin, c.soob);
             std::cout << "Ваше сообщение: ";
-            c.decode(soob);
+            c.decode(c.soob);
             std::cout << std::endl;
         }
-        else if (cod == "exit")
+        else if (c.cod == "exit")
         {
             break;
         }
