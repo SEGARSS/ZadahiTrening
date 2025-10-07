@@ -23,11 +23,11 @@
 class Cezar
 {
 public:
-    Cezar(std::map<char /*оригинал*/, char /*шифр*/> cezar_, std::map<char /*шифр*/, char /*оригинал*/> deshifr_, int sdvig_)
+
+    Cezar()
     {
-        cezar = cezar_;
-        deshifr = deshifr_;
-        sdvig = sdvig_;
+        std::map<char /*оригинал*/, char /*шифр*/> cezar;
+        std::map<char /*шифр*/, char /*оригинал*/> deshifr;
     }
 
     void Shifr()
@@ -78,15 +78,15 @@ int main()
 {
     setlocale(LC_ALL, "ru");
 
-    Cezar c;
-    
-    c.Shifr();
+    Cezar c;   
 
     std::string cod; 
     std::string soob;
 
     std::cout << "Введите сдвиг: ";
-    std::cin >> c.sdvig;    
+    std::cin >> c.sdvig;
+
+    c.Shifr();
 
     while (true)    
     {
