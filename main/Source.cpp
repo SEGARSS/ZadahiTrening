@@ -27,8 +27,6 @@ std::map<char /*шифр*/, char /*оригинал*/> deshifr;
 //----------------------------------------------------------------------------------------
 void code(std::string soob)
 {
-    
-
     for (auto z : soob)
     {
         if (cezar.contains(z))
@@ -40,7 +38,6 @@ void code(std::string soob)
             std::cout << z;
         }
     }
-    std::cout << std::endl;
 }
 //----------------------------------------------------------------------------------------
 void decode(std::string soob)
@@ -56,7 +53,6 @@ void decode(std::string soob)
             std::cout << r;
         }
     }
-    std::cout << std::endl;
 }
 //----------------------------------------------------------------------------------------
 int main()
@@ -88,7 +84,8 @@ int main()
             std::cout << "Введите сообщение: ";
             std::getline(std::cin, soob);
             std::cout << "Ваше сообщение: ";
-            code(soob);            
+            code(soob);
+            std::cout << std::endl;
         }
         else if (cod == "decode")
         {   
@@ -96,6 +93,7 @@ int main()
             std::getline(std::cin, soob);
             std::cout << "Ваше сообщение: ";
             decode(soob);
+            std::cout << std::endl;
         }
         else if (cod == "exit")
         {
