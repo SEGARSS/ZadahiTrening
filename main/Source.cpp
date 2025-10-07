@@ -19,62 +19,78 @@
 Введите команду: exit
 */
 
-
-
-std::map<char /*оригинал*/, char /*шифр*/> cezar;
-std::map<char /*шифр*/, char /*оригинал*/> deshifr;
-
 //----------------------------------------------------------------------------------------
-void code(std::string soob)
+class Cezar
 {
-    for (auto z : soob)
+public:
+    Cezar(std::map<char /*оригинал*/, char /*шифр*/> cezar_, std::map<char /*шифр*/, char /*оригинал*/> deshifr_, int sdvig_)
     {
-        if (cezar.contains(z))
+        cezar = cezar_;
+        deshifr = deshifr_;
+        sdvig = sdvig_;
+    }
+
+    void Shifr()
+    {
+        for (char c = 'a'; c <= 'z'; c++)
         {
-            std::cout << cezar[z];
-        }
-        else
-        {
-            std::cout << z;
+            char c_2 = c + sdvig;
+            cezar[c] = c_2;
+            deshifr[c_2] = c;
         }
     }
-}
-//----------------------------------------------------------------------------------------
-void decode(std::string soob)
-{
-    for (auto r : soob)
+    void code(std::string soob)
     {
-        if (deshifr.contains(r))
+        for (auto z : soob)
         {
-            std::cout << deshifr[r];
-        }
-        else
-        {
-            std::cout << r;
+            if (cezar.contains(z))
+            {
+                std::cout << cezar[z];
+            }
+            else
+            {
+                std::cout << z;
+            }
         }
     }
-}
+    void decode(std::string soob)
+    {
+        for (auto r : soob)
+        {
+            if (deshifr.contains(r))
+            {
+                std::cout << deshifr[r];
+            }
+            else
+            {
+                std::cout << r;
+            }
+        }
+    }   
+
+    std::map<char /*оригинал*/, char /*шифр*/> cezar;
+    std::map<char /*шифр*/, char /*оригинал*/> deshifr;
+    int sdvig;
+    
+};
 //----------------------------------------------------------------------------------------
 int main()
 {
     setlocale(LC_ALL, "ru");
 
-    int sdvig;
+    Cezar c;
+    
+    c.Shifr();
+
     std::string cod; 
     std::string soob;
 
     std::cout << "Введите сдвиг: ";
-    std::cin >> sdvig;
+    std::cin >> c.sdvig;    
 
-    for (char c = 'a'; c <= 'z'; c++)
+    while (true)    
     {
-        char c_2 = c + sdvig;
-        cezar[c] = c_2;
-        deshifr[c_2] = c;
-    }
-
-    while (true)
-    {
+        
         std::cout << "Введите команду: ";
         std::cin >> cod;
         std::cin.ignore();
@@ -84,7 +100,7 @@ int main()
             std::cout << "Введите сообщение: ";
             std::getline(std::cin, soob);
             std::cout << "Ваше сообщение: ";
-            code(soob);
+            c.code(soob);
             std::cout << std::endl;
         }
         else if (cod == "decode")
@@ -92,7 +108,7 @@ int main()
             std::cout << "Введите сообщение: ";
             std::getline(std::cin, soob);
             std::cout << "Ваше сообщение: ";
-            decode(soob);
+            c.decode(soob);
             std::cout << std::endl;
         }
         else if (cod == "exit")
