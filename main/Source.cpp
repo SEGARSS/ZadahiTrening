@@ -19,11 +19,17 @@
 Введите команду: exit
 */
 
+std::string soob;
+
 std::map<char /*оригинал*/, char /*шифр*/> cezar;
 std::map<char /*шифр*/, char /*оригинал*/> deshifr;
 
-void code(std::string soob)
+void code()
 {
+    std::cout << "Введите сообщение: ";
+    std::getline(std::cin, soob);
+    std::cout << "Ваше сообщение: ";
+
     for (auto z : soob)
     {
         if (cezar.contains(z))
@@ -38,8 +44,12 @@ void code(std::string soob)
     std::cout << std::endl;
 }
 
-void decode( std::string soob)
+void decode()
 {
+    std::cout << "Введите сообщение: ";
+    std::getline(std::cin, soob);
+    std::cout << "Ваше сообщение: ";
+
     for (auto r : soob)
     {
         if (deshifr.contains(r))
@@ -60,8 +70,7 @@ int main()
     setlocale(LC_ALL, "ru");
 
     int sdvig;
-    std::string cod;
-    std::string soob;
+    std::string cod;    
 
     std::cout << "Введите сдвиг: ";
     std::cin >> sdvig;
@@ -80,18 +89,12 @@ int main()
         std::cin.ignore();
 
         if (cod == "code")
-        {
-            std::cout << "Введите сообщение: ";
-            std::getline(std::cin, soob);
-            std::cout << "Ваше сообщение: ";
-            code(soob);            
+        {            
+            code();            
         }
         else if (cod == "decode")
-        {
-            std::cout << "Введите сообщение: ";
-            std::getline(std::cin, soob);
-            std::cout << "Ваше сообщение: ";
-            decode(soob);
+        {            
+            decode();
         }
         else if (cod == "exit")
         {
@@ -102,7 +105,6 @@ int main()
             std::cout << "Неверная команда!\n";
             continue;
         }
-
     }
     return 0;
 }
