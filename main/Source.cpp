@@ -26,7 +26,7 @@ public:
 
     Cezar()
     {
-    }
+    } 
 
     void Shifr()
     {
@@ -66,7 +66,7 @@ public:
                 std::cout << r;
             }
         }
-    }   
+    }      
 
     std::map<char /*оригинал*/, char /*шифр*/> cezar;
     std::map<char /*шифр*/, char /*оригинал*/> deshifr;
