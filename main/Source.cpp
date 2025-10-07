@@ -1,34 +1,34 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <vector>
 #include <string>
 #include <map>
 
-// сделать ввод строки от пользователя - зашифровать эту строку - вывести зашифрованную 
+// СЃРґРµР»Р°С‚СЊ РІРІРѕРґ СЃС‚СЂРѕРєРё РѕС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ - Р·Р°С€РёС„СЂРѕРІР°С‚СЊ СЌС‚Сѓ СЃС‚СЂРѕРєСѓ - РІС‹РІРµСЃС‚Рё Р·Р°С€РёС„СЂРѕРІР°РЅРЅСѓСЋ 
 
 /*
-Введите сдвиг: 5
-Введите команду: code
-Введите сообщение: Hello, my name is Igor
-Ваше сообщение: ahdfbajsldflsadfkljhasdf
-Введите команду: decode
-Введите сообщение: ksdjhgflkjdfshgklhdsf
-Ваше сообщение: pognali pit pivo
-Введите команду: test
-Команда неизвесна
-Введите команду:
-Введите команду: exit
+Р’РІРµРґРёС‚Рµ СЃРґРІРёРі: 5
+Р’РІРµРґРёС‚Рµ РєРѕРјР°РЅРґСѓ: code
+Р’РІРµРґРёС‚Рµ СЃРѕРѕР±С‰РµРЅРёРµ: Hello, my name is Igor
+Р’Р°С€Рµ СЃРѕРѕР±С‰РµРЅРёРµ: ahdfbajsldflsadfkljhasdf
+Р’РІРµРґРёС‚Рµ РєРѕРјР°РЅРґСѓ: decode
+Р’РІРµРґРёС‚Рµ СЃРѕРѕР±С‰РµРЅРёРµ: ksdjhgflkjdfshgklhdsf
+Р’Р°С€Рµ СЃРѕРѕР±С‰РµРЅРёРµ: pognali pit pivo
+Р’РІРµРґРёС‚Рµ РєРѕРјР°РЅРґСѓ: test
+РљРѕРјР°РЅРґР° РЅРµРёР·РІРµСЃРЅР°
+Р’РІРµРґРёС‚Рµ РєРѕРјР°РЅРґСѓ:
+Р’РІРµРґРёС‚Рµ РєРѕРјР°РЅРґСѓ: exit
 */
 
 std::string soob;
 
-std::map<char /*оригинал*/, char /*шифр*/> cezar;
-std::map<char /*шифр*/, char /*оригинал*/> deshifr;
+std::map<char /*РѕСЂРёРіРёРЅР°Р»*/, char /*С€РёС„СЂ*/> cezar;
+std::map<char /*С€РёС„СЂ*/, char /*РѕСЂРёРіРёРЅР°Р»*/> deshifr;
 
 void code()
 {
-    std::cout << "Введите сообщение: ";
+    std::cout << "Р’РІРµРґРёС‚Рµ СЃРѕРѕР±С‰РµРЅРёРµ: ";
     std::getline(std::cin, soob);
-    std::cout << "Ваше сообщение: ";
+    std::cout << "Р’Р°С€Рµ СЃРѕРѕР±С‰РµРЅРёРµ: ";
 
     for (auto z : soob)
     {
@@ -46,9 +46,9 @@ void code()
 
 void decode()
 {
-    std::cout << "Введите сообщение: ";
+    std::cout << "Р’РІРµРґРёС‚Рµ СЃРѕРѕР±С‰РµРЅРёРµ: ";
     std::getline(std::cin, soob);
-    std::cout << "Ваше сообщение: ";
+    std::cout << "Р’Р°С€Рµ СЃРѕРѕР±С‰РµРЅРёРµ: ";
 
     for (auto r : soob)
     {
@@ -72,7 +72,7 @@ int main()
     int sdvig;
     std::string cod;    
 
-    std::cout << "Введите сдвиг: ";
+    std::cout << "Р’РІРµРґРёС‚Рµ СЃРґРІРёРі: ";
     std::cin >> sdvig;
 
     for (char c = 'a'; c <= 'z'; c++)
@@ -84,7 +84,7 @@ int main()
 
     while (true)
     {
-        std::cout << "Введите команду: ";
+        std::cout << "Р’РІРµРґРёС‚Рµ РєРѕРјР°РЅРґСѓ: ";
         std::cin >> cod;
         std::cin.ignore();
 
@@ -102,7 +102,7 @@ int main()
         }
         else
         {
-            std::cout << "Неверная команда!\n";
+            std::cout << "РќРµРІРµСЂРЅР°СЏ РєРѕРјР°РЅРґР°!\n";
             continue;
         }
     }
