@@ -77,9 +77,7 @@ public:
 
     std::map<char /*оригинал*/, char /*шифр*/> cezar;
     std::map<char /*шифр*/, char /*оригинал*/> deshifr;
-
-
-    std::string cod;
+    
     std::string soob;
     int sdvig;    
 };
@@ -88,7 +86,9 @@ int main()
 {
     setlocale(LC_ALL, "ru");
 
-    Cezar c;    
+    Cezar c;
+
+    std::string cod;
 
     std::cout << "Введите сдвиг: ";
     std::cin >> c.sdvig;
@@ -98,10 +98,10 @@ int main()
     while (true)    
     {        
         std::cout << "Введите команду: ";
-        std::cin >> c.cod;
+        std::cin >> cod;
         std::cin.ignore();        
 
-        if (c.cod == "code")
+        if (cod == "code")
         {  
             std::cout << "Введите сообщение: ";
             std::getline(std::cin, c.soob);
@@ -109,7 +109,7 @@ int main()
             c.code(c.soob);
             std::cout << std::endl;
         }
-        else if (c.cod == "decode")
+        else if (cod == "decode")
         {   
             std::cout << "Введите сообщение: ";
             std::getline(std::cin, c.soob);
@@ -117,7 +117,7 @@ int main()
             c.decode(c.soob);
             std::cout << std::endl;
         }
-        else if (c.cod == "exit")
+        else if (cod == "exit")
         {
             break;
         }
