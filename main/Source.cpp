@@ -24,98 +24,95 @@ class Cezar
 {
 public:
 
-    Cezar()
-    {
-    } 
-
-    void Shifr()
+    Cezar(int sdvig_)
     {
         for (char c = 'a'; c <= 'z'; c++)
         {
-            char c_2 = c + sdvig;
+            char c_2 = c + sdvig_;
             cezar[c] = c_2;
             deshifr[c_2] = c;
         }
 
         for (char c = 'A'; c <= 'Z'; c++)
         {
-            char c_2 = c + sdvig;
+            char c_2 = c + sdvig_;
             cezar[c] = c_2;
             deshifr[c_2] = c;
         }
     }
 
-    void code(std::string &soob)
+    std::string code(std::string& soob)
     {
+        std::string msg;
         for (auto z : soob)
         {
             if (cezar.contains(z))
             {
-                std::cout << cezar[z];
+                msg += cezar[z];
             }
             else
             {
-                std::cout << z;
+                msg += z;
             }
         }
+
+        return msg;
     }
 
-    void decode(std::string &soob)
+    std::string decode(std::string& soob)
     {
+        std::string msg;
         for (auto r : soob)
         {
             if (deshifr.contains(r))
             {
-                std::cout << deshifr[r];
+                msg += deshifr[r];
             }
             else
             {
-                std::cout << r;
+                msg += r;
             }
         }
-    }      
+        return msg;
+    }
 
     std::map<char /*оригинал*/, char /*шифр*/> cezar;
     std::map<char /*шифр*/, char /*оригинал*/> deshifr;
-    
-    std::string soob;
-    int sdvig;    
 };
 //----------------------------------------------------------------------------------------
 int main()
 {
     setlocale(LC_ALL, "ru");
 
-    Cezar c;
+    int sdvig;
 
     std::string cod;
+    std::string soob;    
 
     std::cout << "Введите сдвиг: ";
-    std::cin >> c.sdvig;
+    std::cin >> sdvig;
 
-    c.Shifr();
+    Cezar c(sdvig);
 
-    while (true)    
-    {        
+    while (true)
+    {
         std::cout << "Введите команду: ";
         std::cin >> cod;
-        std::cin.ignore();        
+        std::cin.ignore();
 
         if (cod == "code")
-        {  
+        {
             std::cout << "Введите сообщение: ";
-            std::getline(std::cin, c.soob);
+            std::getline(std::cin, soob);
             std::cout << "Ваше сообщение: ";
-            c.code(c.soob);
-            std::cout << std::endl;
+            std::cout << c.code(soob) << std::endl;
         }
         else if (cod == "decode")
-        {   
+        {
             std::cout << "Введите сообщение: ";
-            std::getline(std::cin, c.soob);
+            std::getline(std::cin, soob);
             std::cout << "Ваше сообщение: ";
-            c.decode(c.soob);
-            std::cout << std::endl;
+            std::cout << c.decode(soob) << std::endl;
         }
         else if (cod == "exit")
         {
